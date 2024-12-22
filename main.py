@@ -1,6 +1,5 @@
 import pandas as pd
 from sqlalchemy import create_engine
-import psycopg2
 
 engine = create_engine('postgresql://seth:G0thl0rd1@localhost:5432/city_data')
 
