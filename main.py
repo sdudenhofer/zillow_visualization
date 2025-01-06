@@ -16,7 +16,7 @@ def _():
     with pl.Config(auto_structify=True):
         mean = df2000.with_columns(mean=(pl.col(['2000-01-31', '2000-02-29', '2000-03-31', '2000-04-30', '2000-05-31', '2000-06-30', '2000-07-31', '2000-08-31', '2000-09-30', '2000-10-31', '2000-11-30', '2000-12-31'])))
 
-    alt.Chart(mean).mark_bar(point=True).encode(
+    alt.Chart(mean).mark_point(point=True).encode(
         x='RegionName',
         y='2000-01-31',
         color='RegionName:N'
