@@ -1,13 +1,16 @@
-import pandas as pd
-from sqlalchemy import create_engine
+import marimo
 
-engine = create_engine('postgresql://seth:G0thl0rd1@localhost:5432/city_data')
+__generated_with = "0.10.9"
+app = marimo.App(width="medium")
 
 
-data = pd.read_csv('Data/city_data.csv')
-df = pd.DataFrame(data)
-# TODO transform data so each entry has only one date
-if df.columns.str.contains('20').any is True:
-    df['Month/Year'] = pd.to_datetime(df.columns)
+@app.cell
+def _():
+    import polars as pl
 
-df.to_sql(name='city_data', con=engine)
+
+    return (pl,)
+
+
+if __name__ == "__main__":
+    app.run()
